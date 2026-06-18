@@ -14,9 +14,18 @@ spec:
     spec:
       containers:
       - name: shopping-backend
-        image: umamaheswari/shopping-backend:1.0
+        image: umamaheswaritalupuri/shopping-backend:1.0
         ports:
         - containerPort: 8000
+        env:
+        - name: DB_HOST
+          value: shopping-db
+        - name: DB_USER
+          value: root
+        - name: DB_PASSWORD
+          value: password123
+        - name: DB_NAME
+          value: shopping
 ---
 apiVersion: v1
 kind: Service

@@ -14,9 +14,12 @@ spec:
     spec:
       containers:
       - name: shopping-frontend
-        image: umamaheswari/shopping-frontend:1.0
+        image: umamaheswaritalupuri/shopping-frontend:1.0
         ports:
         - containerPort: 3000
+        env:
+        - name: DANGEROUSLY_DISABLE_HOST_CHECK
+          value: "true"
 ---
 apiVersion: v1
 kind: Service

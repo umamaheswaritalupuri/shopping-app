@@ -19,6 +19,7 @@ data:
     ('Headphones', 199.99),
     ('Shoes', 89.99),
     ('Backpack', 49.99);
+    ('tables', 58.99);
 
 
 ---
