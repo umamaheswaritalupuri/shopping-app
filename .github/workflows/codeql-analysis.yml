@@ -1,0 +1,29 @@
+name: CodeQL Security Scan
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: 
+      - main
+permissions:
+  contents: read      # Read the repository code
+  security-events: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: intial codeql
+        uses: [github/codeql-action/init](https://github.com/github/codeql-action)@v3
+        with:
+          languages: 'javascript
+          '
+      
+      - name: Perform CodeQL Analysis
+        uses: [github/codeql-action/analyze](https://github.com/github/codeql-action)@v3
